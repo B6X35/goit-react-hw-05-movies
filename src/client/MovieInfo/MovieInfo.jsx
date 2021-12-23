@@ -10,7 +10,7 @@ import CastPage from "../../pages/CastPage";
 import ReviewPage from "../../pages/ReviewPage";
 
 const MovieInfo = (props) => {
-  const { title, vote_average, release_date, overview, genres, backdrop_path } =
+  const { title, vote_average, release_date, overview, genres, poster_path } =
     props;
 
   const { id } = useParams();
@@ -33,7 +33,7 @@ const MovieInfo = (props) => {
       <div>
         <div>
           <img
-            src={`https://image.tmdb.org/t/p/w300${backdrop_path}`}
+            src={`https://image.tmdb.org/t/p/w300${poster_path}`}
             alt="movie"
           />
         </div>
