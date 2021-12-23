@@ -1,19 +1,27 @@
-import {memo} from "react";
+import { memo } from "react";
 import PropTypes from "prop-types";
-import {Link} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const PopularMovieItem = ({title})=> {
-    return (
-        <Link to={`/`}>
-            <li>
-                <h4>{title}</h4>
-            </li>
-        </Link>
-    )
-}
+const PopularMovieItem = ({ title, id }) => {
+  const location = useLocation();
+  return (
+    <Link
+      to={{
+        pathname: `/movies/${id}`,
+        state: {
+          from: location,
+        },
+      }}
+    >
+      <li>
+        <h4>{title}</h4>
+      </li>
+    </Link>
+  );
+};
 
 export default memo(PopularMovieItem);
 
 PopularMovieItem.propTypes = {
-    title: PropTypes.string.isRequired,
-}
+  title: PropTypes.string.isRequired,
+};
