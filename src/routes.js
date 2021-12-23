@@ -1,8 +1,9 @@
 import { Route, Switch } from "react-router-dom";
+import { Suspense, lazy } from "react";
 
-import HomePage from "./pages/HomePage";
-import SearchPage from "./pages/SearchPage";
-import MoviePage from "./pages/MoviePage";
+const HomePage = lazy(() => import("./pages/HomePage"));
+const SearchPage = lazy(() => import("./pages/SearchPage"));
+const MoviePage = lazy(() => import("./pages/MoviePage"));
 
 const Routes = () => {
   return (
